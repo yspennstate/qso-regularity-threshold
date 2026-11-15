@@ -17,7 +17,7 @@
 
 \title[The regularity threshold of positive quadratic stochastic operators]{On the regularity threshold of uniformly positive quadratic stochastic operators}
 \author{Yitzchak Shmalo}
-\address{Yitzchak Shmalo, Tel Aviv University and Heights Labs}
+\address{Einstein Institute of Mathematics, The Hebrew University of Jerusalem, Jerusalem, Israel}
 \email{yspennstate@gmail.com}
 \date{November 2026}
 \subjclass[2020]{37N25, 47H10, 92D25}
@@ -33,8 +33,8 @@ For $m=2$ we prove $\lambda_2=(3-\sqrt7)/4$. For every $m\ge3$ we prove that $\l
 $(1-1/\sqrt{m+1})/(2m)$ and $2/(3m+2+\sqrt{m^2+12m+4})$, which is less than $1/(2m)$; in particular
 $2m\lambda_m\to1$. The upper bound comes from a contraction of the operator in the Fisher--Rao metric, which
 rests on two inequalities: the derivative of a quadratic stochastic operator at most doubles the Fisher information of
-a tangent vector, and mixing with the uniform distribution divides it by $1-(m-2)\mu$, where $\mu$ is the least
-heredity coefficient. The lower bound comes from an explicit family of operators with strictly positive coefficients
+a tangent vector, and the uniform-mixture map $q\mapsto\mu\mathbf 1+(1-m\mu)q$ multiplies it by at most
+$(1-m\mu)^2/[1-(m-2)\mu]$, where $\mu$ is the least heredity coefficient. The lower bound comes from an explicit family of operators with strictly positive coefficients
 and a two-cycle.
 \end{abstract}
 \maketitle
@@ -59,7 +59,10 @@ for every $x\in S^{m-1}$. The point $p$ is then the only fixed point of $V$. Wri
 \]
 for the least heredity coefficient, and note that $\mu(P)\le1/m$ by~\eqref{eq:coeff}.
 
-Ganikhodzhaev and Sarymsakov~\cite{GS88} proved that $V$ is regular when $P_{ij,k}>1/(2m)$ for all $i,j,k$. The
+Ganikhodzhaev and Sarymsakov~\cite{GS88} proved that $V$ is regular when $P_{ij,k}>1/(2m)$ for all $i,j,k$.
+Positive quadratic stochastic operators with more than one fixed point are known from the work of Krapivin and
+Lyubich~\cite{KL76}, and Fasino and Tudisco~\cite{FT20} recover the bound $1/(2m)$ from the optimal $\ell^1$ Lipschitz
+constant of~\eqref{eq:qso}, an ergodicity coefficient in the sense of Dobrushin~\cite{Dobrushin56}. The
 survey of Ganikhodzhaev and Rozikov~\cite[Theorem~7 and Problem~12]{GR09}, repeated in~\cite[Theorem~2.28 and
 Problem~2.29]{GMR11}, asks for the least number with this property, that is, for
 \begin{equation}\label{eq:lambda}
@@ -78,9 +81,10 @@ $\mu(P)\ge(3-\sqrt7)/4$ is regular, and for every $\delta\in\bigl(0,(3-\sqrt7)/4
 coefficients $P_{11,1}=P_{12,1}=\delta$ and $P_{22,1}=1-\delta$ has $\mu(P)=\delta$ and a two-cycle.
 \end{theorem}
 
-For the operator~\eqref{eq:qso} with the normalization~\eqref{eq:coeff}, the value $(3-\sqrt7)/2=0.177\dots$ is therefore
-not the threshold: by Theorem~\ref{thm:binary}, every $\delta$ strictly between the two values gives an operator with
-all coefficients above $(3-\sqrt7)/4$ and a two-cycle. Section~\ref{sec:binary} also shows that the bound of
+The surveys~\cite[Theorem~7(2)]{GR09} and~\cite[Theorem~2.28(ii)]{GMR11} state $\alpha_2=(3-\sqrt7)/2=0.177\dots$
+under the same normalization~\eqref{eq:coeff}. By Theorem~\ref{thm:binary} every operator with $\mu(P)\ge(3-\sqrt7)/4$ is
+regular, while the family in that theorem has a two-cycle for every $0<\delta<(3-\sqrt7)/4$, so the threshold is
+$(3-\sqrt7)/4$. Section~\ref{sec:binary} also shows that the bound of
 Theorem~\ref{thm:upper} below, applied with $m=2$, gives $\lambda_2\le(2-\sqrt2)/4=0.146\dots$.
 
 \begin{theorem}\label{thm:upper}
@@ -132,13 +136,15 @@ The exact value of $\lambda_m$ for $m\ge3$ remains open. For $m=3,4$, numerical 
 two-cycle or with two distinct fixed points does not go beyond least coefficient $L_m$ (Section~\ref{sec:numerics}).
 
 \subsection*{Related work}
-For $m=2$ the trajectories of~\eqref{eq:qso} are those of a quadratic map of $[0,1]$, and Karim, Hamzah and
-Ganikhodjaev~\cite[Theorem~3.1]{KHG22} show that this map is regular when the discriminant $D$ of $f(x)-x$ is less
+For $m=2$ the trajectories of~\eqref{eq:qso} are those of a quadratic map of $[0,1]$. By Lyubich's analysis of
+quadratic interval maps~\cite{Lyubich74}, recalled in~\cite[Theorem~3.1]{KHG22}, this map is regular when the discriminant $D$ of $f(x)-x$ is less
 than $4$ and has a two-cycle when $D>4$. The proof of Theorem~\ref{thm:binary} needs, in addition, the largest value
 of $D$ under a lower bound on the coefficients and the case $D=4$. Fasino and Tudisco~\cite[Theorem~6.1 and
 Corollary~6.2]{FT20} compute the optimal Lipschitz constant of~\eqref{eq:qso} in the $\ell^1$ norm and recover the bound
 $1/(2m)$; the same contraction is Proposition~\ref{prop:l1} below. Theorem~\ref{thm:upper} replaces the $\ell^1$ norm
-by the Fisher--Rao metric, in which the uniform part of the coefficients improves the constant.
+by the Fisher--Rao metric, in which the uniform part of the coefficients improves the constant. Lipschitz estimates for
+polynomial operators on the simplex go back to Krapivin and Lyubich~\cite{KL77}, and Saburov~\cite{S26} uses contraction
+to prove global asymptotic stability of polynomial stochastic operators.
 
 \subsection*{Organization}
 The paper is arranged as follows; the notation is collected in Appendix~\ref{app:notation}.
@@ -225,7 +231,7 @@ We claim that
 \begin{equation}\label{eq:f2}
 f(f(x))>x\ \text{ for } x<p,\qquad f(f(x))<x\ \text{ for } x>p .
 \end{equation}
-If $A=0$, then $f(x)=Bx+C$ with $|B|=2|b-c|<1$, and $f(f(x))-x=(1+B)(f(x)-x)$ has the sign of $f(x)-x$. Let $A\ne0$. By
+If $A=0$, then $f(x)=Bx+C$ with $B=2(b-c)=a-c$, so $|B|\le1-2\delta<1$, and $f(f(x))-x=(1+B)(f(x)-x)$ has the sign of $f(x)-x$. Let $A\ne0$. By
 Lemma~\ref{lem:disc}, $D\le4$. If $D<4$, then $H>0$ and~\eqref{eq:f2} follows from Lemma~\ref{lem:second}. If $D=4$,
 then $H$ vanishes only at $r=-(B+1)/(2A)$, and substituting $r$ into $f(x)-x=Ax^2+(B-1)x+C$ gives $(4-D)/(4A)=0$.
 So $r$ is a zero of $f(x)-x$, hence $r=p$ or $r\notin[0,1]$, and $H>0$ on $[0,1]\setminus\{p\}$; again~\eqref{eq:f2}
@@ -306,7 +312,8 @@ $t\ge0$. Then
 \[
 \sum_k\frac{v_k^2}{\mu+tq_k}\le\frac{1}{t+2\mu}\sum_k\frac{v_k^2}{q_k}.
 \]
-The constant is attained when $q$ has two entries equal to $1/2$.
+The constant is sharp. It is attained for $m=2$ at $q=(1/2,1/2)$, and for $m>2$ it is approached as $q$ tends to
+$(1/2,1/2,0,\dots,0)$.
 \end{lemma}
 
 \begin{proof}
@@ -363,7 +370,7 @@ $1/(2m)<1/m$, so $C_m<1/(2m)$.
 The set $\Delta_\mu$ also gives a sharper $\ell^1$ bound than Proposition~\ref{prop:l1}. For $x\in\Delta_\mu$ let
 $B_{ki}=\sum_jQ_{ij,k}x_j$. The columns $i$ and $l$ of the stochastic matrix $B$ have overlap
 $\sum_k\min(B_{ki},B_{kl})\ge\sum_kQ_{il,k}\min(x_l,x_i)\ge\mu$, so the Dobrushin coefficient of $B$ is at most $1-\mu$.
-Since $DV(x)=2tB$, integration along segments in the convex set $\Delta_\mu$ shows that $V$ contracts $\Delta_\mu$ in the
+Since $DV(x)=2tB$ on the tangent space, integration along segments in the convex set $\Delta_\mu$ shows that $V$ contracts $\Delta_\mu$ in the
 $\ell^1$ norm with factor $2(1-m\mu)(1-\mu)$, which is less than $1$ for $\mu>1/(m+1+\sqrt{m^2+1})$. This threshold
 lies between $C_m$ and $1/(2m)$.
 \end{remark}
@@ -483,13 +490,20 @@ These entities are included in the funding declaration above.
 \section*{Declaration of generative AI and AI-assisted technologies}
 A Codex agent (OpenAI) proved Theorems~\ref{thm:binary}, \ref{thm:upper} and~\ref{thm:lower}; a second Codex agent
 checked the proofs as a referee, gave the $\ell^1$ bound of Remark~\ref{rem:l1} its proof and ran the searches of
-Section~\ref{sec:numerics}; Claude agents (Anthropic) checked the steps and prepared the manuscript. The author directed
+Section~\ref{sec:numerics}; Claude agents (Anthropic) checked the steps and prepared the manuscript. The problem and the bound $1/(2m)$ are due
+to Rasul N. Ganikhodzhaev and A. T. Sarymsakov~\cite{GS88}, Ganikhodzhaev and Utkir A. Rozikov~\cite{GR09} and
+Ganikhodzhaev, Farrukh Mukhamedov and Rozikov~\cite{GMR11}; the binary discriminant criterion to Yu. I.
+Lyubich~\cite{Lyubich74}, as recalled by Karim, Hamzah and Nasir Ganikhodjaev~\cite{KHG22}; positive operators with
+several fixed points to Krapivin and Lyubich~\cite{KL76}; the ergodicity coefficient to Dobrushin~\cite{Dobrushin56} and
+the optimal $\ell^1$ contraction to Fasino and Tudisco~\cite{FT20}; the doubly stochastic case to M.~Kh. Saburov and
+Kh.~Kh. Saburov~\cite{SS25}. New here are the value of $\lambda_2$ with its boundary case, the Fisher--Rao contraction
+behind Theorem~\ref{thm:upper} and the two-cycles behind Theorem~\ref{thm:lower}. The author directed
 the work and is responsible for the content of the paper and for decisions concerning its dissemination.
 
 \section*{Code availability}
 Exact checks of the identities in Sections~\ref{sec:binary}--\ref{sec:lower}, of the two-cycles for $m=3,\dots,8$ and of
 the examples of Remark~\ref{rem:examples}, and the searches of Section~\ref{sec:numerics}, are in the repository
-\begin{center}\url{https://github.com/yspennstate/qso-regularity-threshold}.\end{center}
+\begin{center}\url{https://github.com/yspennstate/qso-regularity-threshold/tree/v1.1}.\end{center}
 
 \appendix
 \section{Notation}\label{app:notation}
@@ -535,13 +549,25 @@ operators, \emph{Dokl.\ Akad.\ Nauk UzSSR} (1988), no.~11, 5--6 (in Russian).
 \bibitem{KHG22} S.~N.~Karim, N.~Z.~A.~Hamzah and N.~Ganikhodjaev, On the dynamics of geometric quadratic stochastic
 operator generated by 2-partition on countable state space, \emph{Malays.\ J.\ Math.\ Sci.} \textbf{16} (2022), no.~4,
 727--737. \doi{10.47836/mjms.16.4.06}
+\bibitem{Dobrushin56} R.~L.~Dobrushin, Central limit theorem for nonstationary Markov chains. I, \emph{Theory Probab.\
+Appl.} \textbf{1} (1956), no.~1, 65--80. \doi{10.1137/1101006}
+\bibitem{KL76} A.~A.~Krapivin and Yu.~I.~Lyubich, Estimate of the dimension of the set of fixed points of a class of
+quadratic operators, \emph{Sib.\ Math.\ J.} \textbf{17} (1976), no.~4, 704--707. \doi{10.1007/BF00971683}
+\bibitem{KL77} A.~A.~Krapivin and Yu.~I.~Lyubich, Estimates of Lipschitz constants for polynomial operators in a
+simplex, \emph{Soviet Math.\ Dokl.} \textbf{18} (1977), 718--721.
+\bibitem{Lyubich74} Yu.~I.~Lyubich, Iterations of quadratic mappings, in \emph{Mathematical Economics and Functional
+Analysis}, Nauka, Moscow, 1974 (in Russian).
+\bibitem{S26} M.~Saburov, Monte-Carlo methods for stochastic hyper-matrices and global asymptotic stability of
+polynomial stochastic operators, \emph{Funct.\ Anal.\ Appl.} \textbf{60} (2026), no.~3, 312--318.
+\doi{10.1134/S1234567826030109}
 \bibitem{SS25} M.~Kh.~Saburov and Kh.~Kh.~Saburov, The nonlinear Perron--Frobenius stability problem for cubic stochastic
 matrices, \emph{Russian Math.\ Surveys} \textbf{80} (2025), no.~5, 931--933. \doi{10.4213/rm10256e}
 \bibitem{MathBrainRepo} Y.~Shmalo, \emph{Math Brain: public snapshot, code and tests}, 2026,
-\url{https://github.com/yspennstate/math-brain-public}.
+\url{https://github.com/yspennstate/math-brain-public/tree/8c9a6bd478c4ec4082347151b7ae16db50c917dd}.
 \bibitem{MathBrainPaper} Y.~Shmalo, \emph{Math Brain: shared, auditable memory for multi-agent mathematical research},
-October 2026, \url{https://github.com/yspennstate/math-brain-public/tree/main/papers/math-brain-2026-10-24}.
+October 2026, \url{https://github.com/yspennstate/math-brain-public/tree/main/papers/math-brain-2026-10-24},
+\doi{10.5281/zenodo.24150837}.
 \bibitem{BrainFramework} Y.~Shmalo, \emph{Brain Framework}, public software repository, 2026,
-\url{https://github.com/yspennstate/brain-framework-public}.
+\url{https://github.com/yspennstate/brain-framework-public/tree/5629e644cdd510173ae97e9aa92642dabd22dc57}.
 \end{thebibliography}
 \end{document}
